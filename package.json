@@ -1,0 +1,12 @@
+{
+  "name": "serverless-todos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tim-millar/serverless-todos.git",
+  "author": "Tim Millar <heteroskedasticity99@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
