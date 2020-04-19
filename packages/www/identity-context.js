@@ -19,6 +19,7 @@ const Provider = (props) => {
   });
 
   netlifyIdentity.on("logout", (user) => {
+    netlifyIdentity.close();
     setUser();
   });
 
