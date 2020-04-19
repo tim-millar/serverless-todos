@@ -43,14 +43,16 @@ const Dash = (props) => {
           <NavLink as={Link} to="/app" p={2}>
             Dashboard
           </NavLink>
-          <NavLink
-            as={Link}
-            to="/"
-            p={2}
-            onClick={() => netlifyIdentity.logout()}
-          >
-            Log out {user.user_metadata.full_name}
-          </NavLink>
+          {user && (
+            <NavLink
+              as={Link}
+              to="/"
+              p={2}
+              onClick={() => netlifyIdentity.logout()}
+            >
+              Log out {user.user_metadata.full_name}
+            </NavLink>
+          )}
         </Flex>
         <Flex
           as="form"
