@@ -32,7 +32,7 @@ const resolvers = {
       return todos[id];
     },
     updateTodoDone: (_, { id }) => {
-      todos[id].done = true;
+      todos[id].done = !todo[id].done;
       return todos[id];
     },
   },
@@ -41,12 +41,8 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-
   // By default, the GraphQL Playground interface and GraphQL introspection
-  // is disabled in "production" (i.e. when `process.env.NODE_ENV` is `production`).
-  //
-  // If you'd like to have GraphQL Playground and introspection enabled in production,
-  // the `playground` and `introspection` options must be set explicitly to `true`.
+  // is disabled in "production" (when `process.env.NODE_ENV` is `production`)
   playground: true,
   introspection: true,
 });
