@@ -46,8 +46,6 @@ const Dash = (props) => {
   const [updateTodoDone] = useMutation(UPDATE_TODO_DONE);
   const [addTodo] = useMutation(ADD_TODO);
 
-  console.log("hello mum");
-  console.log("data", data);
   return (
     <div>
       <Container>
@@ -98,7 +96,7 @@ const Dash = (props) => {
                     await refetch();
                   }}
                 >
-                  <Checkbox checked={todo.done} />
+                  <Checkbox checked={todo.done} readOnly />
                   <span>{todo.text}</span>
                 </Flex>
               ))}
